@@ -1,0 +1,38 @@
+<!-- <button  (click)="opendialog(element.cards )">Open dialog</button> -->
+<div class="main-table">
+  <h1>TABLE(CLICK ON NAME FOR MORE INFORMATION)</h1>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th *matHeaderCellDef> id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th *matHeaderCellDef> Name </th>
+      <td class="name" mat-cell *matCellDef="let element" (click)="opendialog(element.cards )"> {{element.name}} </td>
+
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th *matHeaderCellDef> date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="designation">
+      <th *matHeaderCellDef> designation </th>
+      <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<!-- <button (click)="getme('gchug')">Open </button>  -->
+
+
+<!-- <app-dialog></app-dialog>
+<app-dialog></app-dialog> -->
+<!-- <dapp-dialog></app-dialog> -->
